@@ -1,10 +1,50 @@
 <script>
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        
+        // Search input logic
+        document.getElementById('search').addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const items = document.getElementById('filterMe').getElementsByTagName('li');
+            let noResults = true;
+
+            for (let i = 0; i < items.length; i++) {
+                const currentItem = items[i].textContent.toLowerCase();
+                if (currentItem.includes(searchValue)) {
+                    items[i].style.display = 'block';
+                    noResults = false;
+                } else {
+                    items[i].style.display = 'none';
+                }
+            }
+
+            // Create "No Results Found" message if no matching items found
+            const noResultItem = document.getElementById('noResult');
+            if (noResults) {
+                if (!noResultItem) {
+                    const noResultLi = document.createElement('li');
+                    noResultLi.textContent = 'Geen projecten gevonden';
+                    noResultLi.id = 'noResult';
+                    document.getElementById('filterMe').appendChild(noResultLi);
+                } else {
+                    noResultItem.style.display = 'block';
+                }
+            } else {
+                if (noResultItem) {
+                    noResultItem.style.display = 'none';
+                }
+            }
+        });
+
+    });
 </script>
 
 <section>
     <div class="filter-row">
         <ul class="filter-item-list" id="filterList">
-            <li class="active">Klimaatadaptatie</li>
+            <li class="active">Alles</li>
+            <li>Klimaatadaptatie</li>
             <li>Waterkwaliteit</li>
             <li>B-RAIN</li>
         </ul>
@@ -29,14 +69,14 @@
         height: max-content;
         width: 100%;
         display: flex;
-        margin-top: 1rem;
+        margin: 1rem 0rem;
     }
 
     .filter-item-list {
         list-style: none;
         padding: 0;
         display: flex;
-        margin: .4rem 0rem 1rem 0rem;
+        margin: .3rem 0rem 1rem 0rem;
         color: #2B3F5A;
         width: 50%;
     }
