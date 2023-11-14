@@ -3,13 +3,13 @@
 
 <section>
     <ul id="filterMe">
-        <li id="klimaatadaptatie">Rood</li>
-        <li id="klimaatadaptatie">Blauw</li>
-        <li id="waterkwaliteit">Groen</li>
-        <li id="klimaatadaptatie">Geel</li>
-        <li id="brain">Grijs</li>
-        <li id="klimaatadaptatie">Bruin</li>
-        <li id="waterkwaliteit">Paars</li>
+        <li id="Klimaatadaptatie">Rood</li>
+        <li id="Klimaatadaptatie">Blauw</li>
+        <li id="Waterkwaliteit">Groen</li>
+        <li id="Klimaatadaptatie">Geel</li>
+        <li id="B-RAIN">Grijs</li>
+        <li id="Klimaatadaptatie">Bruin</li>
+        <li id="Waterkwaliteit">Paars</li>
     </ul>
 </section>
 
@@ -26,7 +26,7 @@
         border-radius: .5rem;
     }
 
-    #klimaatadaptatie:after {
+    #Klimaatadaptatie:after {
         content: "Klimaatadaptatie";
         background-color: #ffffff;
         border: 1px solid #4ECD5D;
@@ -36,7 +36,7 @@
         font-size: .7rem;
     }
 
-    #waterkwaliteit:after {
+    #Waterkwaliteit:after {
         content: "Klimaatadaptatie";
         background-color: #ffffff;
         border: 1px solid #4e72cd;
@@ -46,7 +46,7 @@
         font-size: .7rem;
     }
 
-    #brain:after {
+    #B-RAIN:after {
         content: "Klimaatadaptatie";
         background-color: #ffffff;
         border: 1px solid #cd614e;

@@ -3,28 +3,59 @@
 
     onMount(() => {
         
-        // Search input logic
+        const filterItems = document.getElementById('filterList').getElementsByTagName('li');
+        const listItems = document.getElementById('filterMe').getElementsByTagName('li');
+
+        for (let i = 0; i < filterItems.length; i++) {
+            filterItems[i].addEventListener('click', function() {
+                const filterId = this.textContent.trim();
+
+                for (let j = 0; j < filterItems.length; j++) {
+                    filterItems[j].classList.remove('active');
+                }
+                this.classList.add('active');
+
+                if (filterId.toLowerCase() === 'alles') {
+                    for (let j = 0; j < listItems.length; j++) {
+                        listItems[j].style.display = 'block';
+                    }
+                } else {
+                    for (let j = 0; j < listItems.length; j++) {
+                        const listItem = listItems[j];
+                        if (listItem.id === filterId) {
+                            listItem.style.display = 'block';
+                        } else {
+                            listItem.style.display = 'none';
+                        }
+                    }
+                }
+            });
+        }
+
         document.getElementById('search').addEventListener('input', function() {
             const searchValue = this.value.toLowerCase();
-            const items = document.getElementById('filterMe').getElementsByTagName('li');
             let noResults = true;
 
-            for (let i = 0; i < items.length; i++) {
-                const currentItem = items[i].textContent.toLowerCase();
+            for (let i = 0; i < listItems.length; i++) {
+                const currentItem = listItems[i].textContent.toLowerCase();
                 if (currentItem.includes(searchValue)) {
-                    items[i].style.display = 'block';
+                    listItems[i].style.display = 'block';
                     noResults = false;
                 } else {
-                    items[i].style.display = 'none';
+                    listItems[i].style.display = 'none';
                 }
             }
 
-            // Create "No Results Found" message if no matching items found
+            for (let j = 0; j < filterItems.length; j++) {
+                filterItems[j].classList.remove('active');
+            }
+            filterItems[0].classList.add('active'); // Adding 'active' class to the first filter item
+
             const noResultItem = document.getElementById('noResult');
             if (noResults) {
                 if (!noResultItem) {
                     const noResultLi = document.createElement('li');
-                    noResultLi.textContent = 'Geen projecten gevonden';
+                    noResultLi.textContent = 'No Results Found';
                     noResultLi.id = 'noResult';
                     document.getElementById('filterMe').appendChild(noResultLi);
                 } else {
