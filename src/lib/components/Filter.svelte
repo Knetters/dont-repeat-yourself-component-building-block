@@ -55,7 +55,7 @@
             if (noResults) {
                 if (!noResultItem) {
                     const noResultLi = document.createElement('li');
-                    noResultLi.textContent = 'No Results Found';
+                    noResultLi.textContent = 'Er zijn (nog) geen projecten met die naam.';
                     noResultLi.id = 'noResult';
                     document.getElementById('filterMe').appendChild(noResultLi);
                 } else {
