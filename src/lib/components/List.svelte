@@ -10,6 +10,7 @@
         <li id="B-RAIN">Grijs</li>
         <li id="Klimaatadaptatie">Bruin</li>
         <li id="Waterkwaliteit">Paars</li>
+        <li id="B-RAIN">Zwart</li>
     </ul>
 </section>
 
