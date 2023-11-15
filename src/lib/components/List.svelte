@@ -37,7 +37,7 @@
     }
 
     #Waterkwaliteit:after {
-        content: "Klimaatadaptatie";
+        content: "Waterkwaliteit";
         background-color: #ffffff;
         border: 1px solid #4e72cd;
         border-radius: .5rem;
@@ -47,7 +47,7 @@
     }
 
     #B-RAIN:after {
-        content: "Klimaatadaptatie";
+        content: "B-RAIN";
         background-color: #ffffff;
         border: 1px solid #cd614e;
         border-radius: .5rem;
