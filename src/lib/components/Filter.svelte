@@ -107,7 +107,7 @@
         list-style: none;
         padding: 0;
         display: flex;
-        margin: .3rem 0rem 1rem 0rem;
+        margin: .4rem 0rem 1rem 0rem;
         color: #2B3F5A;
         width: 50%;
     }
