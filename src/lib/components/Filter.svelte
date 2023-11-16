@@ -72,6 +72,11 @@
 </script>
 
 <section>
+    <noscript>
+        <div class="no-js-message">
+            Schakel JavaScript in om de filterfunctionaliteit te gebruiken.
+        </div>
+    </noscript>
     <div class="filter-row">
         <ul class="filter-item-list" id="filterList">
             <li class="active">Alles</li>
@@ -155,6 +160,16 @@
 
     .searchbar::placeholder {
         color: #B7B7B7;
+    }
+
+    .no-js-message {
+        background-color: #eb3939;
+        color: #FFFFFF;
+        padding: .2rem .5rem;
+        width: max-content;
+        border-radius: .5rem;
+        font-size: .8rem;
+        margin-bottom: -1rem;
     }
 
     @media only screen and (max-width: 800px) {
